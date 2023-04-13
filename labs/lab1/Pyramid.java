@@ -1,9 +1,9 @@
-// Pyramid.java: <description>
-// Author: <your name>
-// Date: <todays date>
+// Pyramid.java: Create different pyramids given different inputs
+// Author: Grayson Koch
+// Date: 4/3/23
 
-// The StringBuilder class lives at this location 
-import java.lang.StringBuilder; 
+// The StringBuilder class lives at this location
+import java.lang.StringBuilder;
 
 
 public class Pyramid {
@@ -13,20 +13,26 @@ public class Pyramid {
   // pyramid() returns a string
   public static String pyramid(int n){
 
-    // create a new StringBuilder object named p. It contains a 
+    // create a new StringBuilder object named p. It contains a
     // blank string at first. Feel free to print p out as you work.
-    StringBuilder p = new StringBuilder(); 
+    StringBuilder p = new StringBuilder();
 
     // Build the pyramid string here. Feel free to rename p by the way.
     // Use the append method to add a string to the end of p.
     // eg: p.append("*");
-    
+    for(int i = 0; i < n; i+=1){
+      for(int x = 0; x <= i; x+=1){
+        p.append("*");
+        }
+      p.append("\n");
+      }
 
-    // p is a StringBuilder object, which is not the same as a 
-    // String object. Luckily, the StringBuilder class comes 
-    // with a method called toString, which generates 
+    // p is a StringBuilder object, which is not the same as a
+    // String object. Luckily, the StringBuilder class comes
+    // with a method called toString, which generates
     // a String: p.toString() . However, just generating a String doesn't
     // do much for us. We must also capture that String to a variable, eg:
+
     String result = p.toString();
     return result;
   }
@@ -35,18 +41,43 @@ public class Pyramid {
     StringBuilder p = new StringBuilder();
 
     // work here
-    
-    String result = p.toString(); 
+    for(int i = 0; i < n; i+=1){
+      for(int x = 0; x <= i; x+=1){
+        p.append("*");
+        }
+      p.append("\n");
+      }
+      for(int i = 0; i < n; i+=1){
+        for(int x = n - 2; x >= i; x-=1){
+          p.append("*");
+          }
+        p.append("\n");
+        }
+    String result = p.toString();
     return result;
   }
 
   public static String alternatingPyramid(int n){
-    StringBuilder p = new StringBuilder(); 
-
+    StringBuilder p = new StringBuilder();
+    int m = (n / 2);
+    if(n<4){
+       m += 1;
+    }
+    for(int i = 0;i < n; i += 1){
+      for(int x = n - i ;x >= m; x -= 1){
+        p.append(" ");
+      }
+        for(int y = 0;y<=i;y+=1){
+          p.append("*");
+          if(y!=i){
+            p.append("+");
+      }
+    }
+    p.append("\n");
+  }
     // work here
     // Out of these 3 pyramids, this will be the most difficult.
     // I highly recommend fully solving this on paper/whiteboard first.
-
     String result = p.toString();
     return result;
   }
@@ -58,13 +89,28 @@ public class Pyramid {
     // use these methods to convert a character to upper/lower-case
     // Character.toLowerCase(some_char)
     // Character.toUpperCase(some_char)
-
+    text = text.replace(" ","-");
+    text = text.toLowerCase();
+    int length = text.length();
+    result.append(text.substring(0,1));
+    for(int i = 1; i < length; i += 1){
+      if("-".equals(text.substring(i - 1,i))){
+        result.append(text.substring(1,i));
+        result.append(text.substring(i,i+1).toUpperCase());
+        text = text.substring(i);
+        i = 0;
+        length = text.length();
+      }
+    }
+    result.append(text.substring(1));
     return result.toString();
   }
 
   public static void main(String[] args){
     // To see your results, call the functions and print them out here.
     // eg: System.out.println(pyramid(5));
+    System.out.println(sidePyramid(5));
+    System.out.println("*\n**\n***\n****\n*****\n****\n***\n**\n*\n");
     run_tests();
   }
 

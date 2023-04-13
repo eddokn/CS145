@@ -2,47 +2,84 @@ public class Library {
 
   // attributes here
   private String name = new String();
-  private String[] books = new String[];
-  private int numBooks = new int();
-
+  private int numBooks = 0;
+  private Book[] books = new Book[10000];
 
   public Library(String name, int capacity) {
     this.name = name;
-    String[] books = new String[capacity];
-    this.capacity = capacity;
+    books = new Book[capacity];
   }
 
   public boolean addBook(Book book) {
-    if(numBooks != capacity){
-      books.add(book);
+    if(numBooks != books.length){
+      books[numBooks] = book;
       return true;
     }
-    System.out.println("The library is full!")
+    System.out.println("The library is full!");
     return false;
   }
 
   public void removeBook(String title) {
-    for(int i=0;i<books.length();i++){
-      if(books[i].equals(title)){
+    for(int i=0;i<books.length;i++){
+      if(books[i].title.equals(title)){
         books[i] = null;
       }
     }
   }
 
   public Book getBook(String title) {
-
+    String booktitle = null;
+    for(int i=0;i<books.length;i++){
+     if(books[i] != null){
+      booktitle = books[i].title;
+      if(booktitle.equals(title)){
+        return books[i];
+      }
+   }
   }
+  return null;
+}
+
+public boolean isAvailable(String title) {
+  Book book = getBook(title);
+  if(book.isCheckedOut()){
+    return true;
+  }
+  else{
+    return false;
+  }
+}
 
   public boolean checkOutBook(String title, String userName) {
+    Book book = getBook(title);
+    if(isAvailable(title)){
+      book.checkOut(userName);
+      return true;
+    }
+    else{
+      return false;
+    }
   }
 
   public boolean checkInBook(String title) {
-  }
-
-  public boolean isAvailable(String title) {
+    Book book = getBook(title);
+    if(isAvailable(title) == false){
+      book.checkIn();
+      return true;
+    }
+    else{
+      return false;
+    }
   }
 
   public Book mostPopularBook(){
+    Book most_popular = null;
+    for(int x=0;x<books.length; x++){
+      if(books[x].numCheckOuts>books[x+1].numCheckOuts){
+         most_popular = books[x];
+      }
+    }
+    return most_popular;
   }
 
   public static void main(String[] args){
@@ -57,7 +94,6 @@ public class Library {
     BPL.addBook(mockingbird);
     BPL.addBook(n84);
     if(BPL.addBook(b4)){ System.out.println("Fail: max capacity check"); }
-
     BPL.checkOutBook("The Great Gatsby", "vimcent101");
     if(BPL.checkOutBook("The Great Gatsby", "fern92")){ System.out.println("Fail: tried to check out a book already checked out"); }
     if(!BPL.checkInBook("The Great Gatsby")){ System.out.println("Fail: checkin"); }

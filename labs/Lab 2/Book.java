@@ -1,20 +1,20 @@
 public class Book {
 
   // attributes here
-  private String title = new String();
-  private String author = new String();
-  private String checkedOutBy = new String();
-  private int numCheckOuts = new int();
+   String title = new String();
+   String author = new String();
+   String checkedOutBy = new String();
+   int numCheckOuts = 0;
 
 
   public Book(String title, String author){
     this.title = title;
     this.author = author;
-    checkedOutBy = null;
+    this.checkedOutBy = null;
   }
 
   public void checkOut(String userName) {
-    if(checkedOutBy = null){
+    if(checkedOutBy == null){
       checkedOutBy = userName;
       numCheckOuts ++;
     }
@@ -27,7 +27,7 @@ public class Book {
   }
 
   public boolean isCheckedOut(){
-    if(checkedOutBy = null){
+    if(checkedOutBy == null){
       return true;
     }
     else{
