@@ -1,9 +1,9 @@
 public class Library {
 
   // attributes here
-  String name = new String();
-  String[] books = new String[];
-  int numBooks = new int();
+  private String name = new String();
+  private String[] books = new String[];
+  private int numBooks = new int();
 
 
   public Library(String name, int capacity) {
@@ -23,13 +23,14 @@ public class Library {
 
   public void removeBook(String title) {
     for(int i=0;i<books.length();i++){
-      if(books[i] = title){
+      if(books[i].equals(title)){
         books[i] = null;
       }
     }
   }
 
   public Book getBook(String title) {
+
   }
 
   public boolean checkOutBook(String title, String userName) {

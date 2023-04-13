@@ -1,10 +1,10 @@
 public class Book {
 
   // attributes here
-  String title = new String();
-  String author = new String();
-  String checkedOutBy = new String();
-  int numCheckOuts = new int();
+  private String title = new String();
+  private String author = new String();
+  private String checkedOutBy = new String();
+  private int numCheckOuts = new int();
 
 
   public Book(String title, String author){
