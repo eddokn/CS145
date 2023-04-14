@@ -28,10 +28,10 @@ public class Book {
 
   public boolean isCheckedOut(){
     if(checkedOutBy == null){
-      return true;
+      return false;
     }
     else{
-      return false;
+      return true;
     }
   }
 }

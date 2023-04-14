@@ -3,7 +3,7 @@ public class Library {
   // attributes here
   private String name = new String();
   private int numBooks = 0;
-  private Book[] books = new Book[10000];
+  private Book[] books;
 
   public Library(String name, int capacity) {
     this.name = name;
@@ -43,10 +43,10 @@ public class Library {
 public boolean isAvailable(String title) {
   Book book = getBook(title);
   if(book.isCheckedOut()){
-    return true;
+    return false;
   }
   else{
-    return false;
+    return true;
   }
 }
 
@@ -75,7 +75,7 @@ public boolean isAvailable(String title) {
   public Book mostPopularBook(){
     Book most_popular = null;
     for(int x=0;x<books.length; x++){
-      if(books[x].numCheckOuts>books[x+1].numCheckOuts){
+      if(books[x].numCheckOuts>most_popular.numCheckOuts){
          most_popular = books[x];
       }
     }
