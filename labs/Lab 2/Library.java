@@ -3,7 +3,9 @@ public class Library {
   // attributes here
   private String name = new String();
   private int numBooks = 0;
+  private int numGames = 0;
   private Book[] books;
+  private Game[] games;
 
   public Library(String name, int capacity) {
     this.name = name;
@@ -13,9 +15,9 @@ public class Library {
   public boolean addBook(Book book) {
     if(numBooks != books.length){
       books[numBooks] = book;
+      numBooks++;
       return true;
     }
-    System.out.println("The library is full!");
     return false;
   }
 
@@ -73,15 +75,89 @@ public boolean isAvailable(String title) {
   }
 
   public Book mostPopularBook(){
-    Book most_popular = null;
+    Book most_popular = books[0];
     for(int x=0;x<books.length; x++){
+      if(books[x] != null){
       if(books[x].numCheckOuts>most_popular.numCheckOuts){
          most_popular = books[x];
       }
     }
+  }
     return most_popular;
   }
+  public boolean addGame(Game game) {
+    if(numGames != games.length){
+      games[numGames] = game;
+      numGames++;
+      return true;
+    }
+    return false;
+  }
 
+  public void removeGame(String title) {
+    for(int i=0;i<games.length;i++){
+      if(games[i].title.equals(title)){
+        games[i] = null;
+      }
+    }
+  }
+
+  public Game getGame(String title) {
+    String gametitle = null;
+    for(int i=0;i<games.length;i++){
+     if(games[i] != null){
+      gametitle = games[i].title;
+      if(gametitle.equals(title)){
+        return games[i];
+      }
+   }
+  }
+  return null;
+  }
+
+  public boolean isGameAvailable(String title) {
+  Game game = getGame(title);
+  if(game.isCheckedOut()){
+    return false;
+  }
+  else{
+    return true;
+  }
+  }
+
+  public boolean checkOutGame(String title, String userName) {
+    Game game = getGame(title);
+    if(isGameAvailable(title)){
+      game.checkOut(userName);
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
+
+  public boolean checkInGame(String title) {
+    Game game = getGame(title);
+    if(isGameAvailable(title) == false){
+      game.checkIn();
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
+
+  public Game mostPopularGame(){
+    Game most_popular = games[0];
+    for(int x=0;x<games.length; x++){
+      if(games[x] != null){
+      if(games[x].numCheckOuts>most_popular.numCheckOuts){
+         most_popular = games[x];
+      }
+    }
+  }
+    return most_popular;
+  }
   public static void main(String[] args){
     Library BPL = new Library("Bellingham Public Library", 3);
 
