@@ -18,16 +18,21 @@ public class Player{
     return this.health;
     }
 
-  public int getMana() {
+  public int getManna() {
     return this.mana;
     }
 // method so that players can take damage
   public void sufferDamage(int damage){
+    if(this.health - damage >= 0){
     this.health -= damage;
+   }
+  else{
+    this.health = 0;
+   }
   }
 // method for players to attack
   public void attack(Player opponent, Weapon weapon, Boolean isultimate){
-    if(this.mana > weapon.manacost){
+    if(this.mana >= weapon.manacost){
       if(isultimate){
         opponent.sufferDamage(weapon.ultimateDamage());
         this.mana = 0;

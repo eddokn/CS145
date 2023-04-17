@@ -1,6 +1,7 @@
 public class MagicElixir extends Potion{
   //constructor for the magic elixir
-  public MagicElixir(String "MagicElixir"){
+  public MagicElixir(){
+    super("MagicElixir");
     this.benefit_level = 20;
   }
 }

@@ -23,8 +23,8 @@ public static void main(String[] args) {
 
     // Let's examine who's healthier
     System.out.println("Frodo's health: " + frodo.getHealth());
-    System.out.println("Frodo's manna: " + frodo.getMana());
+    System.out.println("Frodo's manna: " + frodo.getManna());
     System.out.println("Sauron's health: " + sauron.getHealth());
-    System.out.println("Sauron's manna: " + sauron.getMana());
+    System.out.println("Sauron's manna: " + sauron.getManna());
 }
 }
