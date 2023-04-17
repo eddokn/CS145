@@ -1,0 +1,94 @@
+{
+  "tests": [
+    {
+      "name": "Test Case 1. Player is created properly",
+      "setup": "javac -cp .:Tests/junit-4.10.jar:Tests/ *.java Tests/*.java",
+      "run": "java -cp .:Tests/junit-4.10.jar:Tests/ TestRunner TestPlayer",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Test Case 2. Potions and Elixirs are created properly",
+      "setup": "javac -cp .:Tests/junit-4.10.jar:Tests/ *.java Tests/*.java",
+      "run": "java -cp .:Tests/junit-4.10.jar:Tests/ TestRunner TestPotion",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Test Case 3. Weapon is created properly",
+      "setup": "javac -cp .:Tests/junit-4.10.jar:Tests/ *.java Tests/*.java",
+      "run": "java -cp .:Tests/junit-4.10.jar:Tests/ TestRunner TestWeapon",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Test Case 4. Swords and Blasters are created properly",
+      "setup": "javac -cp .:Tests/junit-4.10.jar:Tests/ *.java Tests/*.java",
+      "run": "java -cp .:Tests/junit-4.10.jar:Tests/ TestRunner TestWeaponSubclasses",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Test Case 5. Using weapon causes damage and reduces manna",
+      "setup": "javac -cp .:Tests/junit-4.10.jar:Tests/ *.java Tests/*.java",
+      "run": "java -cp .:Tests/junit-4.10.jar:Tests/ TestRunner TestUsingWeapon",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Test Case 6. Drinking elixir removes elixir's benefit",
+      "setup": "javac -cp .:Tests/junit-4.10.jar:Tests/ *.java Tests/*.java",
+      "run": "java -cp .:Tests/junit-4.10.jar:Tests/ TestRunner TestDrinkingElixir",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Test Case 7. Drinking potion restore's health",
+      "setup": "javac -cp .:Tests/junit-4.10.jar:Tests/ *.java Tests/*.java",
+      "run": "java -cp .:Tests/junit-4.10.jar:Tests/ TestRunner TestElixirRestoresHealth",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Test Case 8. Health and manna stay in bounds",
+      "setup": "javac -cp .:Tests/junit-4.10.jar:Tests/ *.java Tests/*.java",
+      "run": "java -cp .:Tests/junit-4.10.jar:Tests/ TestRunner TestHealthAndManna",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Test Case 9: Game play is correct",
+      "setup": "javac -cp .:Tests/junit-4.10.jar:Tests/ *.java Tests/*.java",
+      "run": "java Adventure",
+      "input": "",
+      "output": "Frodo's health: 85\r\nFrodo's manna: 95\r\nSauron's health: 95\r\nSauron's manna: 0",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 2
+    }
+  ]
+}
