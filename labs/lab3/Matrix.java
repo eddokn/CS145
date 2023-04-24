@@ -1,17 +1,18 @@
 public class Matrix{
+  // attributes
+  private double[][] matrix;
 
-  double[][] matrix;
   public Matrix(int rows, int columns){
     //intialize a matrix of dimensions rows x colums with all
     // entries as zero
-    double[][] matrix = new double[rows][columns];
+     this.matrix = new double[rows][columns];
 
   }
 
   public Matrix(double data[][]){
     //intializes a matrix with a provided two dimensional
     //array of data
-    double[][] matrix = data;
+     this.matrix = data;
   }
 
   public double get(int row, int col){
@@ -27,20 +28,20 @@ public class Matrix{
   public Matrix add(Matrix other){
     //return a new matrix that is the result of adding this Matrix
     //with the other one
-    Matrix matrix = new Matrix();
-    for(int i; i < this.matrix.length; i++){
-      for(int x; x < this.matrix.length;x++){
-        matrix[i][x] = this.matrix[i][x] + other[i][x];
+    Matrix matrix = new Matrix(this.matrix.length, this.matrix[0].length);
+    for(int i=0; i < this.matrix.length; i++){
+      for(int x=0; x < this.matrix[0].length;x++){
+        matrix.matrix[i][x] = this.matrix[i][x] + other.matrix[i][x];
       }
     }
     return matrix;
   }
 
   public Matrix sub(Matrix other){
-    Matrix matrix = new Matrix();
-    for(int i; i < this.matrix.length; i++){
-      for(int x; x < this.matrix.length;x++){
-        matrix[i][x] = this.matrix[i][x] - other[i][x];
+    Matrix matrix = new Matrix(this.matrix.length, this.matrix[0].length);
+    for(int i=0; i < this.matrix.length; i++){
+      for(int x=0; x < this.matrix[0].length;x++){
+        matrix.matrix[i][x] = this.matrix[i][x] - other.matrix[i][x];
       }
     }
     return matrix;
@@ -49,10 +50,18 @@ public class Matrix{
   public Matrix scalarmul(double scalar){
     //return a new matrix that is the result of
     //the scalar multiplication of this matrix with given scalar
+    Matrix matrix = new Matrix(this.matrix.length, this.matrix[0].length);
+    for(int i=0; i < this.matrix.length; i++){
+      for(int x=0; x < this.matrix[0].length; x++){
+        matrix.matrix[i][x] = this.matrix[i][x] * scalar;
+      }
+    }
+    return matrix;
   }
 
   public Matrix transpose(){
     //transpose given matrix
+    return null;
   }
 
   public static void main(String[] args){
