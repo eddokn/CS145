@@ -87,6 +87,8 @@ public class Matrix{
     }
     else{
       System.out.println("addition failure");
+      System.out.println(firstmatrix.add(secondmatrix).matrix);
+      System.out.println(testmatrix.matrix);
     }
     //test subtraction method
     if(firstmatrix.sub(secondmatrix).matrix==emptymatrix.matrix){

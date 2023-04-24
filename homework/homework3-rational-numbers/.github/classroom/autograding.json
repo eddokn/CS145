@@ -1,0 +1,54 @@
+{
+  "tests": [
+    {
+      "name": "Test Case 1. Rational constructor and getters",
+      "setup": "javac -cp .:Tests/junit-4.10.jar:Tests/ *.java Tests/*.java",
+      "run": "java -cp .:Tests/junit-4.10.jar:Tests/ TestRunner TestRationalConstructorAndGetters",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Test Case 2. Test Rational reduce",
+      "setup": "javac -cp .:Tests/junit-4.10.jar:Tests/ *.java Tests/*.java",
+      "run": "java -cp .:Tests/junit-4.10.jar:Tests/ TestRunner TestRationalReduce",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "Test Case 3. Rational add",
+      "setup": "javac -cp .:Tests/junit-4.10.jar:Tests/ *.java Tests/*.java",
+      "run": "java -cp .:Tests/junit-4.10.jar:Tests/ TestRunner TestRationalAdd",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "Test Case 4. harmonicDouble",
+      "setup": "javac -cp .:Tests/junit-4.10.jar:Tests/ *.java Tests/*.java",
+      "run": "java -cp .:Tests/junit-4.10.jar:Tests/ TestRunner TestHarmonicDouble",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "Test Case 5. harmonicRational",
+      "setup": "javac -cp .:Tests/junit-4.10.jar:Tests/ *.java Tests/*.java",
+      "run": "java -cp .:Tests/junit-4.10.jar:Tests/ TestRunner TestHarmonicRational",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 3
+    }
+  ]
+}
