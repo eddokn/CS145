@@ -61,11 +61,53 @@ public class Matrix{
 
   public Matrix transpose(){
     //transpose given matrix
-    return null;
+    Matrix matrix = new Matrix(this.matrix[0].length, this.matrix.length);
+    for(int i=0; i < this.matrix[0].length; i++){
+      for(int x=0; x < this.matrix.length; x++){
+        matrix.matrix[i][x] = this.matrix[x][i];
+      }
+    }
+    return matrix;
   }
 
   public static void main(String[] args){
-    double test_2d_array[][] = { {1, 2, 3}, {4, 5, 6} };
-    System.out.println(test_2d_array);
+    //create matricies
+    double firstarray[][] = {{1, 2, 3}, {4, 5, 6}};
+    Matrix firstmatrix = new Matrix(firstarray);
+    Matrix secondmatrix = firstmatrix;
+    double testarray[][] = {{2, 4, 6}, {8, 10, 12}};
+    Matrix testmatrix = new Matrix(testarray);
+    double testarray2[][] = {{2, 8},{4,10},{6, 12}};
+    Matrix testmatrix2 = new Matrix(testarray2);
+    double emptyarray[][] = {{0, 0, 0}, {0, 0, 0}};
+    Matrix emptymatrix = new Matrix(emptyarray);
+    //test addition method
+    if(firstmatrix.add(secondmatrix).matrix==testmatrix.matrix){
+      System.out.println("addition successful");
+    }
+    else{
+      System.out.println("addition failure");
+    }
+    //test subtraction method
+    if(firstmatrix.sub(secondmatrix).matrix==emptymatrix.matrix){
+      System.out.println("subtraction successful");
+    }
+    else{
+      System.out.println("subtraction failure");
+        }
+  //test scalar multiplication
+    if(firstmatrix.scalarmul(2).matrix==testmatrix.matrix){
+    System.out.println("scalarmul successful");
+    }
+    else{
+    System.out.println("scalarmul failure");
+  }
+  //transpose test
+  if(firstmatrix.transpose().matrix==testmatrix2.matrix){
+    System.out.println("transpose successful");
+  }
+  else{
+    System.out.println("transpose failure");
+  }
   }
 }
