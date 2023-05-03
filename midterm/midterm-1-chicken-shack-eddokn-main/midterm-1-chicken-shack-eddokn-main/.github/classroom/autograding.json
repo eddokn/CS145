@@ -1,0 +1,44 @@
+{
+  "tests": [
+    {
+      "name": "Test less than 4",
+      "setup": "",
+      "run": "make test-less-than-4",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "Test Base Cases",
+      "setup": "",
+      "run": "make test-base",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "Test possible cases",
+      "setup": "",
+      "run": "make test-possible",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 3
+    },
+    {
+      "name": "Test impossible cases",
+      "setup": "",
+      "run": "make test-impossible",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 3
+    }
+  ]
+}

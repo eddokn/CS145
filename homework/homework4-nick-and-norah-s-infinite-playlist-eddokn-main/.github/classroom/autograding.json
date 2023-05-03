@@ -1,0 +1,94 @@
+{
+  "tests": [
+    {
+      "name": "Create a song",
+      "setup": "",
+      "run": "make test-song",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Create playlist",
+      "setup": "",
+      "run": "make test-create-playlist",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Add song",
+      "setup": "",
+      "run": "make test-add-song",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Advance through songs",
+      "setup": "",
+      "run": "make test-advance",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Multiple addition of songs",
+      "setup": "",
+      "run": "make test-multi-add",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "Iterator movement",
+      "setup": "",
+      "run": "make test-iterator-movement",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Reset playback",
+      "setup": "",
+      "run": "make test-reset",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Remove from head",
+      "setup": "",
+      "run": "make test-remove",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Remove single element",
+      "setup": "",
+      "run": "make test-remove-single",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    }
+  ]
+}
