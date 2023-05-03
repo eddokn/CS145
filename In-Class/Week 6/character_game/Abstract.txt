@@ -1,0 +1,12 @@
+what:
+-special type of superclass, organize related classes
+-can leave methods unimplemented by labeling them as abstract
+-subclasses implement these methods in their own way
+  -subclasses MUST implement the abstract methods it inherits
+-cannot be instantiated
+
+
+why
+-a template reduces chances for bugs, makes codebase more readable,
+maintainable and testable
+-ensures that subclasses all have a certain set of methods 
