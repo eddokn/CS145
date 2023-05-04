@@ -7,7 +7,7 @@
     public InfinitePlaylist(String title) {
       this.title = title;
       this.size = 0;
-      this.currentNode = null;
+      this.currentNode = new SongNode(null,null,null);
     }
 
     public String getTitle() {
@@ -25,15 +25,14 @@
     }
 
     public void add(Song song) {
-      SongNode newSong = new SongNode(song, this.currentNode.nextNode, this.currentNode.previousNode);
-      if(this.currentNode.song==null){
+      if(this.currentNode.song == null){
         this.currentNode.song = song;
-        this.currentNode.nextNode = null;
-        this.currentNode.nextNode = null;
-      } else{
+        this.currentNode.nextNode = this.currentNode;
         this.currentNode.previousNode = this.currentNode;
-        this.currentNode = this.currentNode.nextNode;
-        this.currentNode.song = song;
+      } else{
+        SongNode songNode = new SongNode(song, this.currentNode.nextNode, this.currentNode);
+        this.currentNode.nextNode.previousNode = songNode;
+        this.currentNode.nextNode = songNode;
       }
       this.size +=1;
     }
@@ -41,21 +40,29 @@
     public void reset(SongIterator it) {
       // necessary step: cast songiterator as a songiteratorimpl
       SongIteratorImpl itimpl = (SongIteratorImpl) it;
+      this.currentNode = itimpl.currentNode;
     }
 
     public SongIterator iterator() {
-      SongIterator it = (SongIterator) currentNode;
-      return it;
+      SongIteratorImpl it = new SongIteratorImpl(this.currentNode);
+      return (SongIterator) it;
     }
 
     public void insert(SongIterator it) {
-      SongIteratorImpl itimpl = (SongIteratorImpl) it;
-
     }
 
     public void remove(SongIterator it) {
       // necessary step: cast songiterator as a songiteratorimpl
       SongIteratorImpl itimpl = (SongIteratorImpl) it;
-      //
+      if(this.currentNode == this.currentNode.nextNode){
+        this.currentNode.song = null;
+      }
+      if(this.currentNode==itimpl.currentNode){
+        this.currentNode = this.currentNode.nextNode;
+      }
+      SongNode deletenote = itimpl.currentNode;
+      deletenote.previousNode.nextNode = deletenote.nextNode;
+      deletenote.nextNode.previousNode = deletenote.previousNode;
+      itimpl.currentNode = deletenote.nextNode;
     }
 }
