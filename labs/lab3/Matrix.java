@@ -28,6 +28,8 @@ public class Matrix{
   public Matrix add(Matrix other){
     //return a new matrix that is the result of adding this Matrix
     //with the other one
+    //completes this by creating an new matrix object and filling it
+    //by each row and column
     Matrix matrix = new Matrix(this.matrix.length, this.matrix[0].length);
     for(int i=0; i < this.matrix.length; i++){
       for(int x=0; x < this.matrix[0].length;x++){
@@ -38,6 +40,7 @@ public class Matrix{
   }
 
   public Matrix sub(Matrix other){
+    //completes same function as add just subtracting instead
     Matrix matrix = new Matrix(this.matrix.length, this.matrix[0].length);
     for(int i=0; i < this.matrix.length; i++){
       for(int x=0; x < this.matrix[0].length;x++){
@@ -50,6 +53,7 @@ public class Matrix{
   public Matrix scalarmul(double scalar){
     //return a new matrix that is the result of
     //the scalar multiplication of this matrix with given scalar
+    //completes this just like add but multiplies the data entry instead
     Matrix matrix = new Matrix(this.matrix.length, this.matrix[0].length);
     for(int i=0; i < this.matrix.length; i++){
       for(int x=0; x < this.matrix[0].length; x++){
@@ -61,6 +65,8 @@ public class Matrix{
 
   public Matrix transpose(){
     //transpose given matrix
+    //does this by reversing column and row entries on a new Matrix
+    // (backwards for loops)
     Matrix matrix = new Matrix(this.matrix[0].length, this.matrix.length);
     for(int i=0; i < this.matrix[0].length; i++){
       for(int x=0; x < this.matrix.length; x++){
