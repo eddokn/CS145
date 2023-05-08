@@ -3,9 +3,7 @@ public class Node {
   Node next;
 
   public Node(char letter, Node node){
-    info = letter;
-    next = node;
+    this.info = letter;
+    this.next = node;
   }
-  public
-
 }
