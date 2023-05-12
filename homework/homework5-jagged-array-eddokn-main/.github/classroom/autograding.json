@@ -1,0 +1,64 @@
+{
+  "tests": [
+    {
+      "name": "Test create jagged array",
+      "setup": "",
+      "run": "make test-create",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Test add elements",
+      "setup": "",
+      "run": "make test-add",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "Test remove elements",
+      "setup": "",
+      "run": "make test-remove",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "Test pack",
+      "setup": "",
+      "run": "make test-pack",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "Test unpack",
+      "setup": "",
+      "run": "make test-unpack",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "Test invalid operations",
+      "setup": "",
+      "run": "make test-invalid",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    }
+  ]
+}
