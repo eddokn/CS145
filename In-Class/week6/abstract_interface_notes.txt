@@ -1,0 +1,41 @@
+--- abstract class ---
+what :
+- special type of superclass, organize related classes 
+- can leave methods unimplemented by labeling them as abstract
+  - subclasses implement these methods in their own way
+  - subclasses MUST implement the abstract methods it inherits
+- cannot be instantiated
+
+why:
+- a template reduces chances for bugs, makes codebase more readable, 
+  maintainable and testable
+- ensures that subclasses all have a certain set of methods
+
+
+
+--- interface ---
+what: 
+- just like abstract class, but only contain non-implemented methods
+- defines WHAT all subclasses must do (up to the subclass to implement HOW)
+- subclass must implement every method from interface
+- subclasses can implement multiple interfaces
+
+why: 
+- allows you to group up classes together under the name of the interface
+  - typically used to implement different versions of the same concept
+  - guarantees same method names, inputs, and outputs
+- contract: provides specifications that subclasses must follow
+- consistency in codebase
+  - modifying and extending your codebase will not break existing code
+  - adding new classes is easy, will JUST WORK with old code
+
+which to pick?
+- some code implemented, some not: abstract
+- make a contract that must be fulfilled, and
+  dont want to implement anything: interface
+
+
+
+
+
+
