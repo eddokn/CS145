@@ -1,0 +1,64 @@
+{
+  "tests": [
+    {
+      "name": "Test 1. Test queue",
+      "setup": "",
+      "run": "make test-queue",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "Test 2. Test Limited Queue",
+      "setup": "",
+      "run": "make test-limited-queue",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "Test 3. Test Stack",
+      "setup": "",
+      "run": "make test-stack",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "Test 4. Test basic Set",
+      "setup": "",
+      "run": "make test-set",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "Test 5. Test Set union",
+      "setup": "",
+      "run": "make test-set-union",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Test 6. Test Set intersect",
+      "setup": "",
+      "run": "make test-set-intersect",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    }
+  ]
+}
