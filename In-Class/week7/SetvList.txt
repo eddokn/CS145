@@ -1,0 +1,16 @@
+
+sets and lists
+- does order matter
+- are duplicates allowed
+
+list - a collection of tings where order matters and duplicates are allowed
+set - a collection of things where order doesn't matter and duplicates are not allowed
+
+{carrot, egg, milk} == {egg, milk, carrot} -> true
+{carrot, egg, milk, egg} -> not a set
+
+Union - combine sets together and remove duplicates
+{karna, andrea, mara, chris} U {mara, chris, lexy} = {karna, andrea, lexy}
+
+Intersection - combine sets together, only take elements that are in common
+{karna, andrea, mara, chris} intersect {mara, chris, lexy} = {mara, chris}

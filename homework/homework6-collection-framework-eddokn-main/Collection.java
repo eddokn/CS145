@@ -5,6 +5,7 @@ public abstract class Collection {
     protected Node head;
     protected Node tail;
     protected int count;
+    protected int limit;
 
     public Collection() {
         head = tail = null;
@@ -33,14 +34,34 @@ public abstract class Collection {
     /**
      * Add an item to the collection
      */
-    abstract void put(Integer value);
+    public void put(Integer value){
+      // checks if the queue is empty, creates first node
+      if(count == 0){
+        Node newnode = new Node(value, this.tail, this.head);
+        this.head = this.tail = newnode;
+        this.count += 1;
+      }
+      // otherwise appends the node to the list
+      else if(this.limit != this.count){
+        Node newnode = new Node(value, this.tail.next, this.tail);
+          this.tail.next = newnode;
+          this.tail = newnode;
+          this.count += 1;
+        }
+    }
 
     /**
      * Return true if the collection contains the value, or false otherwise
      */
     boolean contains(Integer value) {
         // TODO: You must implement this method
-        for(int i=0; i<count)
+        Node runner = this.head;
+        for(int i=0;i<this.count;i++){
+          if(runner.value == value&&runner!=null){
+            return true;
+          }
+          runner = runner.next; 
+        }
         return false;
     }
 

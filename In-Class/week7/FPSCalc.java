@@ -1,6 +1,6 @@
 /*
  * exercise: calculate the FPS (frames per second) of some application like a game
- * - given a stream of data representing the time taken to draw each frame, 
+ * - given a stream of data representing the time taken to draw each frame,
  *   and a "window size", calculate the average of all integers within this window
  *
  * - this is called the moving average problem. other examples include
@@ -21,33 +21,39 @@ public class FPSCalc{
   Queue<Integer> window;
 
   public FPSCalc(int windowSize) {
-    this.window =  new LinkedList<Integer>(); // question: why does this work? 
+    this.window =  new LinkedList<Integer>(); // question: why does this work?
     this.windowSize = windowSize;
     this.runningSum = 0.0;
   }
 
   // given a new value, calculate a new average within the window
-  // if the queue is at max capacity, dequeue an element before 
+  // if the queue is at max capacity, dequeue an element before
   // enqueueing the new one
   public double next(int val){
+    if(this.window.size() == windowSize && !this.window.isEmpty()){
+      this.runningSum -= this.window.peek();
+      this.window.remove();
+    }
+    this.window.add(val);
+    this.runningSum += val;
+    double temp = this.runningSum;
+    return (temp/this.window.size());
   }
 
   public static void main(String[] args){
     FPSCalc m = new FPSCalc(3);
-    System.out.println(m.next(1));  // [1]/1      = 1 
-    System.out.println(m.next(10)); // [1+10]/2   = 5.5 
-    System.out.println(m.next(3));  // [1+10+3]/3 = 4.666  
-    System.out.println(m.next(5));  // [10+3+5]/3 = 6.0    
-    System.out.println(m.next(2));  // [3+5+2]/3  = 5.0   
+    System.out.println(m.next(1));  // [1]/1      = 1
+    System.out.println(m.next(10)); // [1+10]/2   = 5.5
+    System.out.println(m.next(3));  // [1+10+3]/3 = 4.666
+    System.out.println(m.next(5));  // [10+3+5]/3 = 6.0
+    System.out.println(m.next(2));  // [3+5+2]/3  = 3.33333
 
     /*
     FPSCalc n = new FPSCalc(100);
     for(int i=0; i<1000; i++){
       int randomNum = ThreadLocalRandom.current().nextInt(50, 70);
-      System.out.println(m.next(randomNum)); 
+      System.out.println(m.next(randomNum));
     }
     */
   }
 }
-
-

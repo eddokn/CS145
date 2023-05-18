@@ -15,17 +15,17 @@ public class ValidParenthesis {
       for (char c: s.toCharArray()) {
           if (c == '(') {
               st.push(c);
-          } else if (c == ')' && !st.isEmpty() && st.peek() == ')') {
+          } else if (c == ')' && !st.isEmpty() && st.peek() == '(') {
               st.pop();
-          } else {
+          } else if( c==')'){
               return false;
           }
       }
-      
+
       if (st.isEmpty()) return true;
       else return false;
   }
-                     
+
   public static void main(String[] args){
     boolean result = isValid("( ( () ) () )"); // true
     boolean result1 = isValid("((())"); // false

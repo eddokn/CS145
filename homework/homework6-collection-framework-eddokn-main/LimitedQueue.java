@@ -3,5 +3,7 @@
  */
 public class LimitedQueue extends Queue {
     public LimitedQueue(int limit) {
+      super();
+      this.limit = limit; 
     }
 }
