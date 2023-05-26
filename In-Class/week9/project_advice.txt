@@ -1,0 +1,80 @@
+"do not code until you know what to do code!!!"
+- organize a meeting
+- organize comms and further meetings
+- working through project on whiteboard
+- check each other's understanding, strengths and weaknesses, and
+  knowledge gaps
+- divvy responsibility
+- make a plan on how to connect each other's code together
+- make to do lists for everyone, together
+- work parties
+
+- carefully research and pick supporting data structures and
+  paradigms
+
+- do not reinvent the wheel (dont make anything from scratch if you dont have
+  to)
+
+
+
+
+https://www.wwu.edu/advancement
+scheme https:
+host www.wwu.edu
+subdirectory /advancement
+
+import java.net.URL;
+...
+URL url = new URL(https://www.wwu.edu/advancement);
+String hostname = url.getHost();
+if(the hostname contains the hostpattern (which btw is .*wwu.edu)
+){
+  link is valid, visit
+}
+
+
+
+Page.java ...
+
+public int compareTo(Page other){
+   ... return the rank of whichever has a higher rank
+}
+
+Arrays.sort(an array of page objects)
+
+represent PageSet with HashSet<Page>
+HashSet<Page> mypageset = ...
+Iterator i = mypageset.iterator();
+
+
+
+
+public void readStopWords(){
+  stopwords = new ArrayList<String>();
+  try {
+    FileInputStream fis = new FileInputStream("Lib/stopwords.txt");
+    Scanner s = new Scanner(fis);
+    while(s.hasNextLine()){
+      String word = s.nextLine();
+      .. load into arraylist ..
+      }
+  }
+  catch(Exception e){
+     // do nothing
+  }
+
+porter stemmer - stems words for you
+one method to know: PorterStemmer.stem(word);
+waiting -> wait
+
+String s1 = "hello ";
+String s2 = "world";
+String s3 = s1 + s2; // "hello world"
+
+String.charAt(); // ask a string for a char at some index
+s1.charAt(0); // = h
+
+Character.isDigit(); // check if a char is a digit or not
+Character.isLetter(); // check if char is a letter
+Character.toUpperCase(); // converts a lowercase char to its uppercase
+Character.toLowerCase(); // converts a uppercase char to its lowercase
