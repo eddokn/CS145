@@ -1,0 +1,46 @@
+I have this great idea for a totally original videogame, and I have contracted
+you to implement my ideas. Your task is to take these descriptions and design
+a hierarchical class structure for the whole game. 
+
+I recommend first grouping up ideas into categories, and designating
+superclasses for those categories, while also thinking about abstract classes
+and interfaces.
+
+Repeat this until there is just 1 overarching superclass that all others 
+descend from (perhaps just GameObject).
+
+You must also describe what attributes and methods each class should have. Try to keep it broad, don't get too far into the weeds. 
+eg: A Longsword class should keep track of its damage level, range, and its texture, 
+3d model and audio clips. A Longsword class should do a b c, some of which is 
+inherited from x.
+
+I don't recommend writing this out in a text file like this though. Industry
+practice is to use "class diagrams", meaning using paper to draw out your
+class structure. 
+
+
+Here are the ideas:
+
+There should be a player character. I also want NPC's that you can speak to. I
+want enemy's that wield weapons and fight you. There should be a special
+stronger enemy called the boss.
+
+There should be lots of items. I want to collect plants and mushrooms such as
+berries, carrots and prince mushrooms. I want to collect bugs and gems and
+clothes and monster parts from enemies. These should all be craftable into food, 
+potions and armor. There also exists key items that cannot be removed.
+
+The landscape should be filled with interactable objects like rocks that can 
+be picked up, trees that can be cut down for wood, and metal objects that can
+be moved around with a special magnetic power. There are also lots of
+non-interactable objects that are just part of the landscape, like rocks, big
+trees, mountains, buildings, etc. 
+
+There should be weapons like shortswords, longswords, clubs, and spears. There
+are also bows and shields. Some items can be thrown as a weapon, such as
+bomb-flowers and fire-fruits.
+
+Finally, to make this actually work, there are many game assets. There are 2
+libraries that contain lots of static methods to make the game work: the
+physics engine library and user-interface library. Unrelated, all objects have
+textures, 3d models and audio.
